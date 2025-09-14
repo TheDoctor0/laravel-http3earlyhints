@@ -13,9 +13,19 @@ class GenerateEarlyHints
 {
     use Dispatchable;
 
+    public LinkHeaders $linkHeaders;
+
+    public Request $request;
+
+    public Response $response;
+
     public function __construct(
-        public LinkHeaders $linkHeaders,
-        public Request $request,
-        public Response $response
-    ) {}
+        LinkHeaders $linkHeaders,
+        Request $request,
+        Response $response
+    ) {
+        $this->linkHeaders = $linkHeaders;
+        $this->request = $request;
+        $this->response = $response;
+    }
 }
